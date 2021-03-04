@@ -1,0 +1,39 @@
+{
+  "format_version" : 1,
+  "name": "Test_Pipeline",
+  "environment_variables": [],
+  "group" : "sampleGradle_pipeline",
+  "materials": [
+    {
+      "url": "https://github.com/deepesh-dev/simple-gradle.git",
+      "type": "git"
+    }
+  ],
+  "stages": [
+    {
+      "name": "build",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "build",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "properties": [],
+          "run_instance_count": null,
+          "timeout": 0,
+          "tasks": [
+            {
+              "command": "./build.gradle",
+              "type" : "exec"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
