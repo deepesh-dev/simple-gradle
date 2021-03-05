@@ -11,13 +11,13 @@ pipelines:
       - README.md
   stages:
     - build:
-    clean_workspace: true
+        clean_workspace: true
       jobs:
-          - build:
-            artiacts:
-              - build:
-                  source: build/libs/*.jar
-                  destination: build/libs
-            tasks:
-              - exec:
-              command: ./build.gradle
+        - build:
+          artiacts:
+            - build:
+                source: build/libs/*.jar
+                destination: build/libs
+          tasks:
+            - exec:
+                command: ./build.gradle
