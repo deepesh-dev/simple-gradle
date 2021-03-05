@@ -14,6 +14,10 @@ pipelines:
       - stagebuild:
           jobs:
             buildjob:
+              artifacts:
+                - build:
+                    source: build/libs/*.jar
+                    destination: build/libs
               tasks:
                 - exec:
                     command: ./build.gradle
