@@ -10,10 +10,10 @@ pipelines:
       includes:
         - README.md
     stages:
-      - build:
-          clean_workspace: true
+      build:
+        clean_workspace: true
         jobs:
-          - build:
+          build:
             artiacts:
               - build:
                   source: build/libs/*.jar
