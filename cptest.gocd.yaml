@@ -4,20 +4,20 @@ pipelines:
     group: CAB
     environment_variables:
       DEPLOYMENT: DEV
-  materials:
-    git: https://github.com/deepesh-dev/simple-gradle.git
-    branch: master
-    includes:
-      - README.md
-  stages:
-    - build:
-        clean_workspace: true
-      jobs:
-        - build:
-          artiacts:
-            - build:
-                source: build/libs/*.jar
-                destination: build/libs
-          tasks:
-            - exec:
-                command: ./build.gradle
+    materials:
+      git: https://github.com/deepesh-dev/simple-gradle.git
+      branch: master
+      includes:
+        - README.md
+    stages:
+      - build:
+          clean_workspace: true
+        jobs:
+          - build:
+            artiacts:
+              - build:
+                  source: build/libs/*.jar
+                  destination: build/libs
+            tasks:
+              - exec:
+                  command: ./build.gradle
