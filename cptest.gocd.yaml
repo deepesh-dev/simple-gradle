@@ -18,6 +18,9 @@ pipelines:
                 - build:
                     source: build/libs/*.jar
                     destination: build/libs
+                - test:
+                    source: src
+                    destination: dest
               tasks:
                 - exec:
                     command: ./build.gradle
