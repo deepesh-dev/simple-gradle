@@ -16,9 +16,9 @@ pipelines:
           jobs:
             buildtask:
               artiacts:
-                - build:
-                    source: build/libs/*.jar
-                    destination: build/libs
+                type: build
+                source: build/libs/*.jar
+                destination: build/libs
               tasks:
-                - exec:
-                    command: ./build.gradle
+                type : exec
+                command: ./build.gradle
