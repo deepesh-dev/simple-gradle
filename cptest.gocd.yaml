@@ -12,7 +12,6 @@ pipelines:
             - README.md
     stages:
       stagebuild:
-        clean_workspace: true
         jobs:
           buildtask:
             artiacts:
@@ -21,15 +20,4 @@ pipelines:
               destination: build/libs
             tasks:
               type : exec
-              command: ./build.gradle
-      stagenew:
-        clean_workspace: true
-        jobs:
-          buildtask:
-            artiacts:
-              type: build
-              source: build/libs/*.jar
-              destination: build/libs
-            tasks:
-              type: exec
               command: ./build.gradle
